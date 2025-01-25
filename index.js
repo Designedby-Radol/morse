@@ -28,7 +28,7 @@ function textToMorse(text) {
         "X" : "— · · —",
         "Y" : "— · — —",
         "Z" : "— — · ·",
-        "cero" : "— — — — —",
+        "0" : "— — — — —",
         "uno" : "· — — — —",
         "dos" : "· · — — —",
         "tres" : "· · · — —",
@@ -76,14 +76,15 @@ function morseToText(morse) {
         "— · · —" : "X"  ,
         "— · — —" : "Y"  ,
         "— — · ·" : "Z"  ,
+        "— — — — —": "0"
     };
 
-    return morse.split('')
+    return morse.split('  ')
         .map(code => morseCode[code] || '')
         .join(' ');
 }
 
-const text = "MORSE";
+const text = "Hola Mundo! 0";
 const morsex = textToMorse(text);
 console.log(morsex);
 
